@@ -1,0 +1,38 @@
+.button-sm,
+.button-md,
+.button-lg {
+  margin: 5px;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.button-sm {
+  line-height: 30px;
+  padding: 5px;
+  font-size: 100%;
+
+  &:active {
+    font-size: 95%;
+  }
+}
+
+.button-md {
+  line-height: 50px;
+  min-width: 80.9px;
+  font-size: 125%;
+
+  &:active {
+    font-size: 120%;
+  }
+}
+
+.button-lg {
+  line-height: 60px;
+  min-width: 97px;
+  font-size: 150%;
+
+  &:active {
+    font-size: 145%;
+  }
+}

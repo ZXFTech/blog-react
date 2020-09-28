@@ -1,0 +1,111 @@
+:root {
+  --bg-main-active-color: rgba(241, 196, 15, 1);
+  --bg-main-text-color: rgba(245, 245, 245, 1);
+  --font-main-color: rgba(236, 240, 241, 1);
+  --font-main-text-color: rgba(241, 196, 15, 1);
+
+  --bg-default-color: rgba(127, 140, 141, 1);
+  --bg-default-active-color: rgba(149, 165, 166, 1);
+  --font-default-color: rgba(236, 240, 241, 1);
+
+  --bg-disable-color: rgb(255, 255, 255);
+  --font-disable-color: rgba(200, 200, 200, 1);
+
+  --font-warn-color: rgba(231, 76, 60, 1);
+
+  // --bg-confirm-color:
+
+  --link-color: rgb(49, 52, 75);
+  --border-color: rgb(220, 220, 220);
+
+  --transparency: rgba(255, 255, 255, 0);
+  --light-side-color: rgba(255, 255, 255, 0.4);
+  --dark-side-color: rgb(50, 50, 50, 0.4);
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  --shadow-in-sm: inset 2px 2px 5px var(--dark-side-color),
+    inset -2px -2px 5px var(--light-side-color);
+  --shadow-in-md: inset 4px 4px 6px var(--dark-side-color),
+    inset -4px -4px 6px var(--light-side-color);
+  --shadow-in-lg: inset 6px 6px 12px var(--dark-side-color),
+    inset -6px -6px 12px var(--light-side-color);
+  --shadow-out-sm: 2px 2px 5px var(--dark-side-color),
+    -2px -2px 5px var(--light-side-color);
+  --shadow-out-md: 4px 4px 6px var(--dark-side-color),
+    -4px -4px 6px var(--light-side-color);
+  --shadow-out-lg: 6px 6px 12px var(--dark-side-color),
+    -6px -6px 12px var(--light-side-color);
+  // --border: 0.0625rem solid var(--border-color);
+  --border: 1px solid var(--border-color);
+}
+
+.neu-button-default,
+.neu-button-disable,
+.neu-button-link,
+.neu-button-text,
+.neu-button-warn {
+  outline: none;
+
+  border: none;
+  border-radius: 5px;
+
+  box-shadow: var(--shadow-out-sm);
+
+  &:active {
+    box-shadow: var(--shadow-in-sm);
+  }
+}
+
+.neu-button-default {
+  background-color: var(--bg-main-active-color);
+  color: var(--font-main-color);
+
+  box-shadow: var(--shadow-out-sm);
+
+  &:hover {
+    // background-color: var(--bg-default-hover-color);
+  }
+
+  &:active {
+    background-color: var(--bg-main-active-color);
+
+    box-shadow: var(--shadow-in-sm);
+  }
+}
+
+.neu-button-disable {
+  background-color: var(--bg-disable-color);
+  color: var(--font-disable-color);
+
+  box-shadow: none;
+
+  border: 1px solid var(--font-disable-color);
+
+  &:active {
+    font-size: 150%;
+    box-shadow: none;
+  }
+}
+
+.neu-button-link {
+  background-color: var(--bg-main-text-color);
+  color: var(--font-main-text-color);
+}
+
+.neu-button-text {
+  background-color: var(--bg-main-text-color);
+  color: var(--font-main-text-color);
+
+  border: 1px solid var(--font-main-text-color);
+}
+
+.neu-button-warn {
+  background-color: var(--bg-main-text-color);
+  color: var(--font-warn-color);
+
+  border: 1px solid var(--font-warn-color);
+}
