@@ -1,15 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import "./themes/neumorphism.scss";
+// import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  Route,
+} from "react-router-dom";
+import Frame from "./components/Frame";
+
+import { navRoute } from "./routes/index";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Frame>
+      <Switch>
+        {navRoute.map((route) => {
+          return <Route key={route.path} {...route} />;
+        })}
+        <Redirect from="/" to="/home" />
+        <Redirect to="/404" />
+      </Switch>
+    </Frame>
+  </Router>,
   document.getElementById("root")
 );
 

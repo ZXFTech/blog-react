@@ -1,9 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Navbar() {
+import { XRoute } from "../../routes";
+
+function Navbar({ nav }: any) {
   return (
-    <div>
-      <h2>导航栏</h2>
+    <div className="navbar_main">
+      {nav.map((item: XRoute) => {
+        return (
+          <Link key={item.path} className="navbar_item" to={item.path}>
+            {item.text}
+          </Link>
+        );
+      })}
     </div>
   );
 }

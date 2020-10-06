@@ -10,19 +10,254 @@
 
   --light-side-color: #fff;
   --dark-side-color: #b8b9be;
-  --shadow-in-sm: inset 2px 2px 4px var(--light-side-color), inset 2px 2px 4px;
+  --shadow-in-sm: inset 2px 2px 4px var(--light-side-color),
+    inset 2px 2px 4px var(--dark-side-color);
+  --shadow-out-sm: -4px -4px 4px var(--light-side-color),
+    4px 4px 4px var(--dark-side-color);
 }
 
 * {
   box-sizing: border-box;
+  background-color: var(--background-main-color);
+  color: var(--font-main-color);
 }
 
+a {
+  text-decoration: none;
+}
+
+/*	#region	shadow	*/
+.blog_section_main {
+  border-radius: 10px;
+  box-shadow: var(--shadow-out-sm);
+}
+/*	#endregion	*/
+/*	#region	frame	*/
 .frame {
   width: 100vw;
   height: 100vh;
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  align-content: center;
 }
+
+/*	#endregion	*/
+
+/*	#region	header	*/
+.header_main {
+  z-index: 999;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
+
+  box-shadow: 5px 0px 5px var(--dark-side-color);
+
+  .icon_main {
+    height: 50px;
+    img {
+      height: 100%;
+    }
+  }
+  // background-color: #000;
+
+  /*	#region	Navbar	*/
+  .navbar_main {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    .navbar_item {
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 30px;
+      line-height: 40px;
+
+      margin-right: 20px;
+    }
+  }
+  /*	#endregion	*/
+}
+/*	#endregion	*/
+
+/*	#region	content	*/
+.content_main {
+  height: 90vh;
+
+  .content_content_main {
+    padding: 30px;
+    width: 800px;
+    overflow: hidden;
+
+    box-shadow: inset 4px 0 4px var(--dark-side-color),
+      inset -4px 0 4px var(--dark-side-color);
+
+    // border: solid 1px var(--font-main-color);
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .side-bar_main {
+    width: 300px;
+    padding: 10px;
+  }
+  display: flex;
+  flex-direction: row;
+}
+
+/*	#endregion	*/
+
+/*	#region	home	*/
+
+.home_main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: auto;
+
+  .blog_section_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 800px;
+    height: 300px;
+    overflow: hidden;
+
+    padding: 20px;
+
+    .blog_section_img {
+      width: 200px;
+      height: 100%;
+      border-radius: 10px;
+      img {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+
+    .blog_section_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: 0 20px;
+
+      a {
+        margin: 0;
+        line-height: 20px;
+        font-size: 20px;
+      }
+
+      p {
+        overflow: hidden;
+      }
+    }
+
+    .blog_section_details {
+      display: flex;
+      justify-items: center;
+      justify-content: space-between;
+      span {
+        svg {
+          height: 20px;
+          margin-right: 0.5rem;
+        }
+      }
+      a {
+        float: right;
+        line-height: 20px;
+        font-size: 20px;
+        svg {
+          height: 20px;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+/*	#endregion	*/
+
+/*	#region	blog-page	*/
+.blog-page_main {
+  padding: 0;
+  margin: auto;
+  width: 75%;
+
+  * {
+    margin: 1rem auto;
+  }
+}
+
+.blog-page_title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.blog-page_tags {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+
+  span {
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 1rem;
+    border: var(--border);
+
+    box-shadow: var(--shadow-in-sm);
+  }
+}
+
+.blog-page_details {
+  margin: 0;
+  text-align: center;
+  font-size: 0.5rem;
+
+  span {
+    margin-right: 1rem;
+  }
+}
+
+.blog-page_content {
+  box-shadow: var(--shadow-out-md);
+  padding: 0.5rem 1rem;
+}
+
+.blog-page_shares {
+  padding-left: 1rem;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  * {
+    margin: 0;
+  }
+
+  a {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    border: var(--border);
+    border-radius: 2rem;
+    margin-right: 0.7rem;
+    padding: 0.3rem;
+    text-align: center;
+    box-shadow: var(--shadow-out-sm);
+
+    &:hover {
+      box-shadow: var(--shadow-in-sm);
+      font-size: 0.6rem;
+    }
+  }
+}
+/*	#endregion	*/

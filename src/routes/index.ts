@@ -1,12 +1,15 @@
+import BlogDetail from "../pages/BlogDetail";
 import Blogs from "../pages/Blogs";
 import Home from "../pages/Home";
 import Introduce from "../pages/Introduce";
+import PageNotFound from "../pages/PageNotFound";
 
 export interface XRoute {
   name: string;
   path: string;
   text: string;
   component: any;
+  isNav: boolean;
 }
 
 export const navRoute: Array<XRoute> = [
@@ -15,18 +18,35 @@ export const navRoute: Array<XRoute> = [
     path: "/home",
     text: "首页",
     component: Home,
+    isNav: true,
   },
   {
     name: "blogs",
     path: "/blogs",
     text: "博客",
     component: Blogs,
+    isNav: true,
   },
   {
     name: "introduce",
     path: "/introduce",
     text: "个人介绍",
     component: Introduce,
+    isNav: true,
+  },
+  {
+    name: "blogDetail",
+    path: "/blogDetail/:id",
+    text: "博客详情",
+    component: BlogDetail,
+    isNav: false,
+  },
+  {
+    name: "404",
+    path: "/404",
+    text: "404",
+    component: PageNotFound,
+    isNav: false,
   },
 ];
 

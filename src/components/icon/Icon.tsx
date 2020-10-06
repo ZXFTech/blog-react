@@ -1,9 +1,11 @@
 import React from "react";
 
+import icon from "../../assets/icon/akari.jpg";
+
 function Icon() {
   return (
-    <div>
-      <h1>图标</h1>
+    <div className="icon_main">
+      <img src={icon} alt="icon" />
     </div>
   );
 }

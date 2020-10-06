@@ -6,16 +6,11 @@ import Header from "./header/Header";
 import Sidebar from "./sidebar/Sidebar";
 
 function Frame(props: any) {
-  console.log("Frame", props);
-
   return (
     <div className="frame">
       <Header />
 
-      <Content>
-        <Sidebar />
-        {props.children}
-      </Content>
+      <Content>{props.children}</Content>
 
       <Footer />
     </div>
