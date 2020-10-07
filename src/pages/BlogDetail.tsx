@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+
 import { Blog } from "../interface/Blog";
 
 import { getBlogDetail } from "../service/blog";
+
+import { Share, shares } from "../dataStructure/shares";
 
 function BlogDetail(props: any) {
   const [blog, setBlog] = useState<Blog>();
@@ -33,7 +36,7 @@ function BlogDetail(props: any) {
         <div className="blog-page_content">{blog.content}</div>
         <div className="blog-page_shares">
           分享：
-          <a className="facebook" href="#">
+          {/* <a className="facebook" href="#">
             <span className="fa fa-facebook-f"></span>
           </a>
           <a className="qq" href="#">
@@ -41,7 +44,14 @@ function BlogDetail(props: any) {
           </a>
           <a className="weixin" href="#">
             <span className="fa fa-weixin"></span>
-          </a>
+          </a> */}
+          {shares.map((item: Share) => {
+            return (
+              <a className="share_main" href={item.url}>
+                {item.icon()}
+              </a>
+            );
+          })}
         </div>
       </div>
     );

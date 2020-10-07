@@ -3,6 +3,7 @@ import Blogs from "../pages/Blogs";
 import Home from "../pages/Home";
 import Introduce from "../pages/Introduce";
 import PageNotFound from "../pages/PageNotFound";
+import Test from "../pages/Test";
 
 export interface XRoute {
   name: string;
@@ -39,6 +40,13 @@ export const navRoute: Array<XRoute> = [
     path: "/blogDetail/:id",
     text: "博客详情",
     component: BlogDetail,
+    isNav: false,
+  },
+  {
+    name: "test",
+    path: "/test",
+    text: "测试",
+    component: Test,
     isNav: false,
   },
   {
