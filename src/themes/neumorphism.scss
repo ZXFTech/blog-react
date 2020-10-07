@@ -10,9 +10,13 @@
 
   --light-side-color: #fff;
   --dark-side-color: rgba(175, 175, 175, 1);
-  --shadow-in-sm: inset 2px 2px 2px var(--dark-side-color),
+  --shadow-in-sm: inset 1px 1px 1px var(--dark-side-color),
+    inset -1px -1px 1px var(--light-side-color);
+  --shadow-in-md: inset 2px 2px 2px var(--dark-side-color),
     inset -2px -2px 2px var(--light-side-color);
-  --shadow-out-sm: -2px -2px 2px var(--light-side-color),
+  --shadow-out-sm: -1px -1px 1px var(--light-side-color),
+    1px 1px 1px var(--dark-side-color);
+  --shadow-out-md: -2px -2px 2px var(--light-side-color),
     2px 2px 2px var(--dark-side-color);
 }
 
@@ -259,29 +263,29 @@ a {
 
     .share_main {
       display: inline-block;
-      height: 2.1rem;
-      width: 2.1rem;
+      height: 2.5rem;
+      width: 2.5rem;
       border: var(--border);
       border-radius: 50%;
       margin-right: 0.7rem;
-      padding: 0.3rem;
+      padding: 0.5rem;
       text-align: center;
       box-shadow: var(--shadow-out-sm);
 
       .share_icon {
         z-index: -1;
         display: block;
-        // height: 1.5rem;
-        font-size: 1.5rem;
-        // width: 1.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
         border-radius: inherit;
       }
 
       &:hover {
         box-shadow: var(--shadow-in-sm);
-        padding: 0.4rem;
+        padding: 0.6rem;
         .share_icon {
-          font-size: 1.3rem;
+          height: 1.3rem;
+          width: 1.3rem;
         }
       }
     }
@@ -295,5 +299,87 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+}
+/*	#endregion	*/
+
+/*	#region	comment	*/
+.comment_main {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .comment_input {
+    margin-bottom: 20px;
+    input {
+      border: none;
+      line-height: 40px;
+      font-size: 15px;
+      padding: 0 15px;
+      outline: none;
+      width: 630px;
+      background-color: rgba(240, 240, 240, 1);
+      box-shadow: inset 1px 1px 1px var(--dark-side-color),
+        inset -1px -1px 1px var(--light-side-color);
+      &:focus {
+        background-color: rgba(250, 250, 250, 1);
+        box-shadow: var(--shadow-in-sm);
+      }
+    }
+    button {
+      float: right;
+      border: none;
+      letter-spacing: 3px;
+      box-shadow: var(--shadow-out-sm);
+      line-height: 40px;
+      padding: 0 10px;
+      font-size: 20px;
+      width: 80px;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        box-shadow: 1px 1px 1px var(--dark-side-color),
+          -1px -1px 1px var(--light-side-color);
+      }
+
+      &:active {
+        font-size: 18px;
+        box-shadow: var(--shadow-in-sm);
+      }
+    }
+  }
+
+  .comment_comment {
+    .comment_user-icon {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+
+      box-shadow: var(--shadow-out-md);
+    }
+
+    .comment_content {
+      margin-bottom: 20px;
+      display: inline-block;
+
+      margin-left: 10px;
+      width: 690px;
+      border-radius: 10px;
+      box-shadow: var(--shadow-in-sm);
+      padding: 10px;
+
+      .comment_detail {
+        font-size: 5px;
+        margin-bottom: 5px;
+      }
+    }
+
+    .comment_comment_reply {
+      width: 660px;
+      margin-left: 40px;
+    }
+  }
 }
 /*	#endregion	*/

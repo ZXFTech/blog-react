@@ -6,6 +6,9 @@ import { getBlogDetail } from "../service/blog";
 
 import { Share, shares } from "../dataStructure/shares";
 
+import ReactMarkdown from "react-markdown";
+import Comment from "../components/comment/Comment";
+
 function BlogDetail(props: any) {
   const [blog, setBlog] = useState<Blog>();
 
@@ -33,9 +36,8 @@ function BlogDetail(props: any) {
             最后更新于 {blog.updateDate}
           </span>
         </div>
-        <div className="blog-page_content">{blog.content}</div>
+        <ReactMarkdown className="blog-page_content" source={blog.content} />
         <div className="blog-page_shares">
-          分享：
           {/* <a className="facebook" href="#">
             <span className="fa fa-facebook-f"></span>
           </a>
@@ -53,6 +55,7 @@ function BlogDetail(props: any) {
             );
           })}
         </div>
+        <Comment />
       </div>
     );
   }
