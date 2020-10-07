@@ -1,22 +1,19 @@
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
-
-library.add(fab, faCheckSquare, faCoffee);
+import { faGithub, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 
 export const shares: Share[] = [
   {
-    plat: "github",
-    url: "github.com",
-    icon: () => <FontAwesomeIcon className="share_icon" icon={faGithub} />,
+    plat: "youtube",
+    url: "https://www.youtube.com/",
+    icon: () => (
+      <FontAwesomeIcon className="share_icon" icon={faYoutubeSquare} />
+    ),
   },
   {
     plat: "github",
-    url: "github.com",
+    url: "https://github.com",
     icon: () => <FontAwesomeIcon className="share_icon" icon={faGithub} />,
   },
 ];
